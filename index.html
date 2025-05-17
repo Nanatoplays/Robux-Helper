@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robux Helper</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function calculateEarnings() {
+      const sales = parseInt(document.getElementById("sales").value) || 0;
+      const price = parseInt(document.getElementById("price").value) || 0;
+      const robux = Math.floor(sales * price * 0.7);
+      document.getElementById("result").textContent = `Estimated Robux: ${robux}`;
+    }
+
+    function generateIdea() {
+      const ideas = [
+        "Obstacle Course (Obby) with VIP perks",
+        "Tycoon game with upgradeable features",
+        "Adventure quest game with pets",
+        "Mini-game hub with leaderboards"
+      ];
+      const random = ideas[Math.floor(Math.random() * ideas.length)];
+      document.getElementById("ideaResult").textContent = `Game Idea: ${random}`;
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-blue-600 text-white p-4 shadow-md">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-bold">Robux Helper</h1>
+      <p class="text-sm">Learn how to earn Robux the right way!</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">🚀 Featured Tip</h2>
+      <p class="text-gray-700">Want to start earning Robux? Try creating a gamepass for your own obby map. It's one of the easiest ways to begin!</p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">📚 Guides</h3>
+        <ul class="list-disc list-inside text-blue-700">
+          <li><a href="#">How to Sell Clothing</a></li>
+          <li><a href="#">Creating a Game with Monetization</a></li>
+          <li><a href="#">Using Affiliate Links to Earn Robux</a></li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">🛠️ Robux Earnings Calculator</h3>
+        <label class="block mb-1 text-sm font-medium">Number of Sales:</label>
+        <input id="sales" type="number" class="w-full p-2 border mb-2" />
+        <label class="block mb-1 text-sm font-medium">Price per Sale:</label>
+        <input id="price" type="number" class="w-full p-2 border mb-2" />
+        <button onclick="calculateEarnings()" class="bg-blue-600 text-white px-4 py-2 rounded">Calculate</button>
+        <p id="result" class="mt-2 font-semibold"></p>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">🎲 Game Idea Generator</h3>
+        <button onclick="generateIdea()" class="bg-blue-600 text-white px-4 py-2 rounded">Generate Idea</button>
+        <p id="ideaResult" class="mt-2 font-semibold"></p>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">🎨 Clothing Template</h3>
+        <p>Download Roblox shirt/pants templates and learn how to design clothes!</p>
+        <a class="text-blue-500 underline" href="https://static.wikia.nocookie.net/roblox/images/d/d5/Shirt_Template.png" target="_blank">Download Shirt Template</a><br>
+        <a class="text-blue-500 underline" href="https://static.wikia.nocookie.net/roblox/images/0/0b/Pants_Template.png" target="_blank">Download Pants Template</a>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2">💬 Community (Coming Soon)</h3>
+        <p>Share your tips and tricks with other Roblox developers!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white p-4 mt-10 text-center">
+    <p>© 2025 Robux Helper. Not affiliated with Roblox Corporation.</p>
+  </footer>
+</body>
+</html>
